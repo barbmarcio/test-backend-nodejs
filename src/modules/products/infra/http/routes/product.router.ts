@@ -8,15 +8,15 @@ const productController = new ProductController();
 productRouter.get('/', productController.index);
 
 // Get product by ID
-productRouter.get('/:id', productController.index);
+productRouter.get('/:id', productController.show);
 
 // Create product
-productRouter.post('/', productController.index);
+productRouter.post('/', productController.create);
 
 // Update product
-productRouter.put('/:id', productController.index);
+productRouter.put('/:id', productController.update);
 
 // Delete product
-productRouter.delete('/:id', productController.index);
+productRouter.delete('/:id', productController.delete);
 
 export default productRouter;

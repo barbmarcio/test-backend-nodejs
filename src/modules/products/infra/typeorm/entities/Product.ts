@@ -5,7 +5,10 @@ import {
   OneToOne,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinColumn,
 } from 'typeorm';
+
+import ProductCategory from '@modules/products_categories/infra/typeorm/entities/ProductCategory';
 
 @Entity('products')
 class Product {
@@ -21,12 +24,9 @@ class Product {
   @Column()
   price: number;
 
-  @Column()
-  category_id: string;
-
-  /* @OneToOne(() => ProductCategory)
-  @JoinColumn({name: 'category_id'})
-  category: ProductCategory */
+  @OneToOne(() => ProductCategory)
+  @JoinColumn({ name: 'category_id' })
+  category_id: ProductCategory;
 
   @CreateDateColumn()
   created_at: Date;

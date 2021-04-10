@@ -13,6 +13,7 @@ class ProductsRepository implements IProductsRepository {
 
   public async create(data: ICreateProductDTO): Promise<Product> {
     const newProduct = this.productsRepository.create(data);
+    console.log(data.category_id);
     await this.productsRepository.save(newProduct);
 
     return newProduct;

@@ -16,7 +16,6 @@ class ProductService {
 
   public async create(data: ICreateProductDTO): Promise<Product> {
     const newEmployee = await this.productRepository.create(data);
-
     return newEmployee;
   }
 
