@@ -26,7 +26,7 @@ class ProductsRepository implements IProductsCategoryRepository {
   ): Promise<ProductCategory> {
     const updatedProduct = await this.productsCategoriesRepository.save({
       id,
-      title: data.title,
+      data,
     });
 
     return updatedProduct;

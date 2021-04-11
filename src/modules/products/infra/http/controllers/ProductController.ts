@@ -12,7 +12,7 @@ class ProductController {
   }
 
   public async show(req: Request, res: Response): Promise<Response> {
-    const { title } = req.params;
+    const title = req.params.id;
     const productService = container.resolve(ProductService);
     const foundProduct = await productService.getByName(title);
 

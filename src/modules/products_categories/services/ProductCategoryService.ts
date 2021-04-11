@@ -49,7 +49,7 @@ class ProductCategoryService {
 
     const deleteEmployee = await this.productCategoryRepository.delete(id);
 
-    return 'Product successfully deleted';
+    return 'Product category successfully deleted';
   }
 
   public async getAll(): Promise<any> {

@@ -3,6 +3,7 @@ import { Repository, getRepository } from 'typeorm';
 import ICreateProductDTO from '@modules/products/dtos/ICreateProductDTO';
 import IProductsRepository from '@modules/products/repositories/IProductsRepository';
 import Product from '@modules/products/infra/typeorm/entities/Product';
+import { differenceInQuarters } from 'date-fns';
 
 class ProductsRepository implements IProductsRepository {
   private productsRepository: Repository<Product>;
@@ -13,7 +14,6 @@ class ProductsRepository implements IProductsRepository {
 
   public async create(data: ICreateProductDTO): Promise<Product> {
     const newProduct = this.productsRepository.create(data);
-    console.log(data.category_id);
     await this.productsRepository.save(newProduct);
 
     return newProduct;

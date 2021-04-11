@@ -41,6 +41,11 @@ class ProductService {
     return 'Product successfully deleted';
   }
 
+  public async getById(id: string): Promise<Product | undefined> {
+    const foundProduct = await this.productRepository.getById(id);
+    return foundProduct;
+  }
+
   public async getAll(): Promise<any> {
     const products = await this.productRepository.getAll();
 
