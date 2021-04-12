@@ -1,6 +1,6 @@
 <h1>Informações úteis</h1>
 
-Desenvolvido em TypeScript utilizando TypeORM e usando banco de dados postgres através do docker
+Desenvolvido em TypeScript utilizando TypeORM e usando banco de dados postgres através do docker;
 Deixei todas as informações para acesso ao banco fora de arquivo ENV para que seja possível a alteração na hora de testarem.
 As informações do banco estão no arquivo "ormconfig" localizado na raiz.
 As requisições foram feitas utilizando Insomnia para testes
